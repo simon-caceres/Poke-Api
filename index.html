@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script> 
+    <script type="text/javascript" src="https://canvasjs.com/assets/script/jquery.canvasjs.min.js"></script> 
+  <link rel="stylesheet" href="main.css">
+    <title>Poke-Api</title>
+</head>
+<body>
+    <h1 class="text-center Pokename">Buscando Pokemones:</h1>
+
+    <form id="formulario">
+    <div class="form-group row justify-content-center">
+        <div class="col-sm-8">
+          <label class="Pokename" for="pokenumero">Escoja el numero de un pokemon: </label>
+          <input type="number" class="form-control" id="pokenumero" placeholder="ingrese">
+          <small id="PokeHelp" class="form-text text-muted Pokename">un número del 1 al 897.</small>
+        </div>
+        <div>
+            <button type="submit" class="btn btn-primary justify-content-center">Vamos!:</button>
+        </div>
+    </div>
+    </form>
+
+    <div class="results container justify-content-md-center">
+        <div class="row">
+            <div class="STatus col-md-auto"></div>
+          <div class="Imprimir col "></div>
+          
+          <div class="chartContainer col-md-auto " style="height: 300px; width: 100%"></div> 
+        </div>
+    </div>
+    
+
+
+    
+<script src="main.js"></script>
+</body>
+</html>

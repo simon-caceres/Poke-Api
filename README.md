@@ -1,2 +1,5 @@
 # Poke-Api
-Probando ajax y j-query
+
+  Desarrollando estrategias de consulta a Api externa mediante metodos ajax, assync, await y J-query.
+  
+  Un poco de Bootstrap (https://getbootstrap.com/) para el Front.

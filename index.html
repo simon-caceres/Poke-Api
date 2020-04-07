@@ -5,49 +5,54 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script> 
-    <script type="text/javascript" src="https://canvasjs.com/assets/script/jquery.canvasjs.min.js"></script> 
-    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.4.1/cyborg/bootstrap.min.css">
   <link rel="stylesheet" href="main.css">
     <title>Poke-Api</title>
 </head>
 <body>
-    <h1 class="text-center Pokename">Buscando Pokemones:</h1>
-
-    <form id="formulario">
-    <div class="form-group row justify-content-center">
-        <div class="col-sm-8">
-          <label class="Pokename" for="pokenumero">Escoja el nombre o numero de un pokemon: </label>
-          <input type="text" class="form-control" id="pokenumero" placeholder="ingrese">
-          <small id="PokeHelp" class="form-text text-muted Pokename">un número del 1 al 897.</small>
-        </div>
-        <div>
-            <button type="submit" class="btn btn-primary justify-content-center">Vamos!:</button>
-        </div>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark p-7">
+    <a class="navbar-brand" href="index.html">Poke-Api</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="https://pokeapi.co/docs/v2.html#wrap">Documentation</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link disabled" href="#">Peliculas</a>
+        </li>
+      </ul>
+      <form class="form-inline my-2 my-lg-0">
+        <input class="form-control mr-sm-2" type="search" id="pokenumero" placeholder="Nombre o Numero" aria-label="Search">
+        <button class="btn btn btn-primary my-6 my-sm-0" type="Search">Vamos!</button>
+        
+      </form>
     </div>
-    </form>
-
-    
+  </nav>
+  <main>
+    <h1 class="text-center Pokename">Buscando Pokemones:</h1>
       <div class="row row-cols-1 row-cols-md-3 row-cols-xl-5 Imprimir" id="Imprimir"></div>
-    
+
       <nav aria-label="Page navigation example">
         <ul class="pagination justify-content-center">
           <li class="page-item">
             <a class="page-link" href="#"  id="Previous">Previous</a>
           </li>
-          
             <a class="page-link" href="#" id="Next">Next</a>
           </li>
         </ul>
       </nav>
-      
-    
-        </div>
-    
-    
+  </main>
+    <footer class="bg-light"> <p id="By">Poke-Api by: Simón Cáceres <p> </footer>
 
 
-    <script src="node_modules/paginationjs/src/pagination.js"></script>
-<script src="main.js"></script>
+    <script src="main.js"></script>
 
 </body>
 </html>

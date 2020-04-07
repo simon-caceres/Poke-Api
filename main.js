@@ -9,9 +9,9 @@ $(document).ready(function(){
            }).done(function (data) {
           
           $(".Imprimir").append(`<div class="col mb-4">
-          <div class="card bg-dark">
+          <div class="card bg-light border-primary">
           <div class="card-body">
-            <h5 class="card-title Pokename"> Nombre: ${data.name}</h5>
+            <h5 class="card-title text-center Pokename">  ${data.name}</h5>
             <img src="${data.sprites.front_default}" class="card-img-top pokeImg" alt="...">
             <p class="card-text Pokename2">Habilidad: ${data.abilities[0].ability.name}</p>
           </div>
@@ -49,9 +49,9 @@ $(document).ready(function(){
          
           let respuesta = 
           `<div class="col mb-4">
-          <div class="card bg-dark">
+          <div class="card bg-light border-primary">
           <div class="card-body">
-            <h5 class="card-title Pokename"> Nombre: ${pokemon_1.name}</h5>
+            <h5 class="card-title text-center Pokename"> ${pokemon_1.name}</h5>
             <img src="${pokemon_1.sprites.front_default}" class="card-img-top pokeImg" alt="...">
             <p class="card-text Pokename2">Habilidad: ${pokemon_1.abilities[0].ability.name}</p>
           </div>
@@ -91,9 +91,9 @@ document.getElementById('Next').addEventListener('click', function () {
        
         let respuesta = 
         `<div class="col mb-4">
-        <div class="card bg-dark">
+        <div class="card bg-light border-primary">
         <div class="card-body">
-          <h5 class="card-title Pokename"> Nombre: ${pokemon_1.name}</h5>
+          <h5 class="card-title text-center Pokename">  ${pokemon_1.name}</h5>
           <img src="${pokemon_1.sprites.front_default}" class="card-img-top pokeImg" alt="...">
           <p class="card-text Pokename2">Habilidad: ${pokemon_1.abilities[0].ability.name}</p>
         </div>
@@ -130,9 +130,9 @@ document.getElementById('Previous').addEventListener('click', function () {
            
             let respuesta = 
             `<div class="col mb-4">
-            <div class="card bg-dark">
+            <div class="card bg-light border-primary">
             <div class="card-body">
-              <h5 class="card-title Pokename"> Nombre: ${pokemon_1.name}</h5>
+              <h5 class="card-title text-center Pokename">  ${pokemon_1.name}</h5>
               <img src="${pokemon_1.sprites.front_default}" class="card-img-top pokeImg" alt="...">
               <p class="card-text Pokename2">Habilidad: ${pokemon_1.abilities[0].ability.name}</p>
             </div>

@@ -1,8 +1,9 @@
-body{
+main{
     background-image: url('pokeball-vector-22.jpg');
     background-repeat: no-repeat;
     background-size: cover;
-    
+    padding-left: 30px;
+    padding-right: 30px;
 }
 
 .pokeImg>img{
@@ -21,4 +22,13 @@ body{
 
 button{
     margin-top: 30px;
+}
+
+footer{
+    height: 50px;
+    text-align: center;
+}
+    
+#By{
+    padding-top: 15px;
 }

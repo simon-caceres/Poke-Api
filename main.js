@@ -1,43 +1,63 @@
-$(function(){
-    $('#formulario').submit(function (evento) {
-        evento.preventDefault();
-        var Numero = $('#pokenumero').val();
-        console.log(Numero);
+
+$(document).ready(function(){
+    // $('#formulario').submit(function (evento) {
+    //     evento.preventDefault();
+        for(let index = 1; index <= 20; index++) {
+          const Numero = index;
         $.ajax({
-            url: `https://pokeapi.co/api/v2/pokemon/${Numero}`,
-        }).done(function (data) {
-            console.log(data);
-            $(".Imprimir").append(`<div class="text-center Pokename"><h2> Nombre: ${data.name}</h2></div>`);
-            $(".Imprimir").append(`<div class="text-center pokeImg"><img src="${data.sprites.front_default}"/></div>`);
-            $(".Imprimir").append(`<div class="text-center Pokename2"><h2> Peso: ${data.weight} KG </h2></div>`);
+          url: `https://pokeapi.co/api/v2/pokemon/${Numero}`,
+           }).done(function (data) {
+          
+          $(".Imprimir").append(`<div class="col mb-4">
+          <div class="card bg-dark">
+          <div class="card-body">
+            <h5 class="card-title Pokename"> Nombre: ${data.name}</h5>
+            <img src="${data.sprites.front_default}" class="card-img-top pokeImg" alt="...">
+            <p class="card-text Pokename2">Habilidad: ${data.abilities[0].ability.name}</p>
+          </div>
+        </div>
+        </div>`);   
+      });  
+     };
+     $('#pokenumero').keyup(function(){
+      var nombres = $('.card-title');
+      var buscando = $(this).val();
+      var item='';
+      for( var i = 0; i < nombres.length; i++ ){
+          item = $(nombres[i]).html().toLowerCase();
+           for(var x = 0; x < item.length; x++ ){
+               if( buscando.length == 0 || item.indexOf( buscando ) > -1 ){
+                   $(nombres[i]).parents('.card').show(); 
+               }else{
+                    $(nombres[i]).parents('.card').hide();
+               }
+           }
+      }
+   });
+});
 
-            $(".chartContainer").CanvasJSChart({ 
-                title: { 
-                  text: "Habilidades:" 
-                }, 
-                axisY: { 
-                  title: "Valor", 
-                  includeZero: false 
-                }, 
-                data: [ 
-                { 
-                  type: "column", 
-                  toolTipContent: "{label}: {y}", 
-                  dataPoints: [ 
-                    { label: data.stats[0].stat.name, y: data.stats[0].base_stat }, 
-                    { label: data.stats[1].stat.name, y: data.stats[1].base_stat }, 
-                    { label: data.stats[2].stat.name, y: data.stats[2].base_stat }, 
-                    { label: data.stats[3].stat.name, y: data.stats[3].base_stat }, 
-                    { label: data.stats[4].stat.name, y: data.stats[4].base_stat }, 
-                    { label: data.stats[5].stat.name, y: data.stats[5].base_stat }, 
-                  ] 
-                } 
-                ] 
-              });
-             
-            
-        });
-        
+let page = 0;
+let large = 20;
 
-    });
+document.getElementById('Next').addEventListener('click', function () {
+  page += 20
+  large += 20
+  $('.Imprimir').html('');
+  for(let index = `${page}` ; index <= `${large}`; index++) {
+    const Numero = index;
+  $.ajax({
+    url: `https://pokeapi.co/api/v2/pokemon/${Numero}`,
+     }).done(function (data) {
+    
+    $(".Imprimir").append(`<div class="col mb-4">
+    <div class="card bg-dark">
+    <div class="card-body">
+      <h5 class="card-title Pokename"> Nombre: ${data.name}</h5>
+      <img src="${data.sprites.front_default}" class="card-img-top pokeImg" alt="...">
+      <p class="card-text Pokename2">Habilidad: ${data.abilities[0].ability.name}</p>
+    </div>
+  </div>
+  </div>`);   
+});  
+};
 });
